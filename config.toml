@@ -1,4 +1,32 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'Docs'
-theme = 'hugo-geekdoc'
+baseURL = "http://localhost"
+title = "Docs"
+theme = "hugo-geekdoc"
+
+pluralizeListTitles = false
+
+# Geekdoc required configuration
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+
+# Required if you want to render robots.txt template
+enableRobotsTXT = true
+
+# Needed for mermaid shortcodes
+[markup]
+    [markup.goldmark.renderer]
+        # Needed for mermaid shortcode
+        unsafe = true
+    [markup.tableOfContents]
+        startLevel = 1
+        endLevel = 9
+
+[taxonomies]
+    tag = "tags"
+
+[params]
+    geekdocRepo = "https://github.com/smokybrowncockroach/docs"
+    geekdocEditPath = "edit/main"
+    [params.geekdocContentLicense]
+        name = "CC BY-SA 4.0"
+        link = "https://creativecommons.org/licenses/by-sa/4.0/"
