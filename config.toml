@@ -1,4 +1,4 @@
-baseURL = "http://localhost"
+baseURL = "http://smokybrowncockroach.github.io/docs"
 title = "Docs"
 theme = "hugo-geekdoc"
 

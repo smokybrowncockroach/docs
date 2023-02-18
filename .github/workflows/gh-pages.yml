@@ -1,0 +1,26 @@
+name: GitHub Pages
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+        with:
+          submodules: false
+          fetch-depth: 0
+      - name: Download dependencies
+        run: make build
+      - name: Build site
+        run: hugo --minify
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/head/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

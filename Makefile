@@ -2,9 +2,9 @@ GEEKDOC_VERSION ?= v0.37.1
 THEME ?= hugo-geekdoc
 THEMEDIR ?= themes
 
-.PHONY: clean serve
-default: serve
+.PHONY: build clean serve
 
+build: themes/hugo-geekdoc
 themes/hugo-geekdoc:
 	curl -L -o $(THEMEDIR)/hugo-geekdoc.tar.gz https://github.com/thegeeklab/hugo-geekdoc/releases/download/$(GEEKDOC_VERSION)/hugo-geekdoc.tar.gz
 	curl -L -o $(THEMEDIR)/sha256sum.txt https://github.com/thegeeklab/hugo-geekdoc/releases/download/$(GEEKDOC_VERSION)/sha256sum.txt
