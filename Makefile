@@ -6,6 +6,7 @@ THEMEDIR ?= themes
 
 build: themes/hugo-geekdoc
 themes/hugo-geekdoc:
+	mkdir -p $(THEMEDIR)
 	curl -L -o $(THEMEDIR)/hugo-geekdoc.tar.gz https://github.com/thegeeklab/hugo-geekdoc/releases/download/$(GEEKDOC_VERSION)/hugo-geekdoc.tar.gz
 	curl -L -o $(THEMEDIR)/sha256sum.txt https://github.com/thegeeklab/hugo-geekdoc/releases/download/$(GEEKDOC_VERSION)/sha256sum.txt
 	cd $(THEMEDIR) && sha256sum -c sha256sum.txt
