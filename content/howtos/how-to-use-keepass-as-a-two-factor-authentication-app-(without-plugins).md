@@ -1,7 +1,7 @@
 ---
 title: "How to Use Keepass as a Two-Factor Authentication App (without Plugins)"
 date: 2023-02-13T03:19:58-05:00
-draft: true
+draft: false
 ---
 
 
